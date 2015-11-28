@@ -16,7 +16,7 @@ public class EntityManagerHelper {
     private static final ThreadLocal<EntityManager> threadLocal;
 
     static {
-    	String persistenceUnitName = "cdwebPersistenceUnit";
+    	String persistenceUnitName = "cdwebPersistenceUnitLocal";
         emf = Persistence.createEntityManagerFactory(persistenceUnitName);
         threadLocal = new ThreadLocal<EntityManager>();
     }

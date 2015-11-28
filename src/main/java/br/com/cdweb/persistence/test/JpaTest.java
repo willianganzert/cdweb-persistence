@@ -1,7 +1,5 @@
 package br.com.cdweb.persistence.test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import br.com.cdweb.persistence.domain.Configuracoes;
