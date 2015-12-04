@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="usuario")
+@XmlRootElement
 public class Usuario  extends ComunEntidades implements Serializable{
 
 	/**
@@ -24,17 +26,17 @@ public class Usuario  extends ComunEntidades implements Serializable{
     	sequenceName="usuario_id_usuario_seq", allocationSize=1)	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="usuario_id_usuario_seq")	
     @Column(name = "id_usuario", updatable=false)
-	private int idUsuario;
+	private long idUsuario;
 
 	private String login;
 
 	private String senha;
 
-	public int getIdUsuario() {
+	public long getIdUsuario() {
 		return idUsuario;
 	}
 
-	public void setIdUsuario(int idUsuario) {
+	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
 
