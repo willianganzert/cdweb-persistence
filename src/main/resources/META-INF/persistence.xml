@@ -61,7 +61,7 @@
 			<property name="javax.persistence.jdbc.password" value="6]fHW{$P6!.R" />
 			<!-- CRIAR NOVAS TABELAS, CASO ELAS EXISTAM ECLIPSE LINK SEGUIRÁ O COMPORTAMENTO DEFAULT DO BANCO, 
 			PODENDO SER O LANÇAMENTO DE UMA EXCECAO-->  			
-			<!-- <property name="eclipselink.ddl-generation" value="create-tables" /> -->
+<!-- 			<property name="eclipselink.ddl-generation" value="create-tables" /> -->
 			<!-- CRIAR NOVAS TABELAS OU ADICIONAR NOVAS COLUNAS-->
 			<property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
 			<!-- RECRIAR TODO O ESQUEMA DE TABELAS-->

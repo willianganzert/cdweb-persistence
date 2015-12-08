@@ -3,6 +3,7 @@ package br.com.cdweb.persistence.test;
 import java.util.List;
 
 import br.com.cdweb.persistence.domain.Configuracoes;
+import br.com.cdweb.persistence.domain.Usuario;
 import br.com.cdweb.persistence.jpa.JpaAllEntities;
 
 public class JpaTest {
@@ -20,7 +21,10 @@ public class JpaTest {
 		Configuracoes configuration = new Configuracoes();
 		configuration.setChave("IP_RASP");
 		configuration.setValor("192.168.0.1");
-		JpaAllEntities.insertOrUpdate(configuration);
+		Usuario usuario =new Usuario();
+		usuario.setLogin("mairalima");
+		usuario.setSenha("mairalima");
+		JpaAllEntities.insertOrUpdate(usuario);
 		
 		
 		List<Configuracoes> configuracoes = JpaAllEntities.listAll(Configuracoes.class);

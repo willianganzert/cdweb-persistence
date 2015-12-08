@@ -31,6 +31,10 @@ public class Usuario  extends ComunEntidades implements Serializable{
 	private String login;
 
 	private String senha;
+	
+	private String nome;
+	
+	private String telefone;
 
 	public long getIdUsuario() {
 		return idUsuario;
@@ -55,5 +59,23 @@ public class Usuario  extends ComunEntidades implements Serializable{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	
+	
 
 }
