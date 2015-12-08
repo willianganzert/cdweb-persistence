@@ -13,6 +13,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @Table(name="usuario")
+@SequenceGenerator(name="usuario_id_usuario_seq", sequenceName="usuario_id_usuario_seq", allocationSize=1)	
 @XmlRootElement
 public class Usuario  extends ComunEntidades implements Serializable{
 
@@ -21,9 +22,7 @@ public class Usuario  extends ComunEntidades implements Serializable{
 	 */
 	private static final long serialVersionUID = 2972313420767777806L;
 
-	@Id
-    @SequenceGenerator(name="usuario_id_usuario_seq",
-    	sequenceName="usuario_id_usuario_seq", allocationSize=1)	
+	@Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="usuario_id_usuario_seq")	
     @Column(name = "id_usuario", updatable=false)
 	private long idUsuario;
@@ -32,8 +31,10 @@ public class Usuario  extends ComunEntidades implements Serializable{
 
 	private String senha;
 	
+	@Column(length=100)
 	private String nome;
 	
+	@Column(length=14)
 	private String telefone;
 
 	public long getIdUsuario() {
@@ -60,13 +61,6 @@ public class Usuario  extends ComunEntidades implements Serializable{
 		this.senha = senha;
 	}
 
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
 
 	public String getNome() {
 		return nome;
@@ -75,7 +69,13 @@ public class Usuario  extends ComunEntidades implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
 }

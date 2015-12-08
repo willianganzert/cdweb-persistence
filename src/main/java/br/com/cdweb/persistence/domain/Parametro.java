@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="parametro")
+@SequenceGenerator(name="parametro_id_parametro_seq",
+sequenceName="parametro_id_parametro_seq", allocationSize=1)	
 public class Parametro  extends ComunEntidades implements Serializable{
 
 	/**
@@ -20,11 +23,33 @@ public class Parametro  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 3225155586814133708L;
 
 	@Id
-    @SequenceGenerator(name="modelo_predefinicao_id_modelo_predefinicao_seq",
-    	sequenceName="modelo_predefinicao_id_modelo_predefinicao_seq", allocationSize=1)	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_predefinicao_id_modelo_predefinicao_seq")	
-    @Column(name = "id_modelo_parametro", updatable=false)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="parametro_id_parametro_seq")	
+    @Column(name = "id_parametro", updatable=false)
 	private int idParametro;
+	
+	@JoinColumn(name="id_dispositivo")
+	private Dispositivo dispositivo;
+	
+	private String nome;
+
+	/**
+	 * TIPO 1 = TEXTO
+	 * TIPO 2 = NUMERICO
+	 * TIPO 3 = INTERVALO
+	 * 
+	 */
+	private int tipo;
+
+	private String tipoValor;
+
+	private String tipoValor2;
+	
+	
+	
+	public Parametro() {
+	
+	}	
+	
 
 	public int getIdParametro() {
 		return idParametro;
@@ -66,18 +91,12 @@ public class Parametro  extends ComunEntidades implements Serializable{
 		this.tipoValor2 = tipoValor2;
 	}
 
-	private String nome;
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
 
-	/**
-	 * TIPO 1 = TEXTO
-	 * TIPO 2 = NUMERICO
-	 * TIPO 3 = INTERVALO
-	 * 
-	 */
-	private int tipo;
-
-	private String tipoValor;
-
-	private String tipoValor2;
-
+	public void setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+	}
+	
 }

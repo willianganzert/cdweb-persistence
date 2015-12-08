@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="modelo_predefinicao")
+@SequenceGenerator(name="modelo_predefinicao_id_modelo_predefinicao_seq", sequenceName="modelo_predefinicao_id_modelo_predefinicao_seq", allocationSize=1)
 public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 
 	/**
@@ -19,10 +20,7 @@ public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 	 */
 	private static final long serialVersionUID = -7084921622387297614L;
 
-	@Id
-    @SequenceGenerator(name="modelo_predefinicao_id_modelo_predefinicao_seq",
-    	sequenceName="modelo_predefinicao_id_modelo_predefinicao_seq", allocationSize=1)
-	
+	@Id	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_predefinicao_id_modelo_predefinicao_seq")	
     @Column(name = "id_modelo_parametro", updatable=false)
 	private String idModeloPredefinicao;
@@ -30,6 +28,11 @@ public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 	private String nome;
 
 	private String descricao;
+	
+	
+	public ModeloPredefinicao() {
+	}
+	
 
 	public String getIdModeloPredefinicao() {
 		return idModeloPredefinicao;

@@ -7,11 +7,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="modelo_dispositivo")
+@SequenceGenerator(name="modelo_dispositivo_id_modelo_dispositivo_seq", sequenceName="modelo_dispositivo_id_modelo_dispositivo_seq",
+allocationSize=1)
 public class ModeloDispositivo extends ComunEntidades implements Serializable{
 
 	/**
@@ -19,15 +22,26 @@ public class ModeloDispositivo extends ComunEntidades implements Serializable{
 	 */
 	private static final long serialVersionUID = 5072581408493829746L;
 	
-	@Id
-    @SequenceGenerator(name="modelo_dispositivo_id_modelo_dispositivo_seq",
-                       sequenceName="modelo_dispositivo_id_modelo_dispositivo_seq",
-                       allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator="modelo_dispositivo_id_modelo_dispositivo_seq")	
+	@Id    
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_dispositivo_id_modelo_dispositivo_seq")	
     @Column(name = "id_modelo_dispositivo", updatable=false)
 	private int idModeloDispositivo;
 
+
+	@JoinColumn(name="id_dispositivo")
+	private Dispositivo dispositivo;
+	
+	@JoinColumn(name="id_area")
+	private Area area;
+	
+	private String nome;
+
+	
+	public ModeloDispositivo() {
+	
+	}
+	
+	
 	public int getIdModeloDispositivo() {
 		return idModeloDispositivo;
 	}
@@ -44,6 +58,22 @@ public class ModeloDispositivo extends ComunEntidades implements Serializable{
 		this.nome = nome;
 	}
 
-	private String nome;
+	public Dispositivo getDispositivo() {
+		return dispositivo;
+	}
+
+	public void setDispositivo(Dispositivo dispositivo) {
+		this.dispositivo = dispositivo;
+	}
+
+	public Area getArea() {
+		return area;
+	}
+
+	public void setArea(Area area) {
+		this.area = area;
+	}
+
+	
 
 }

@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="perfil")
+@SequenceGenerator(name="perfil_id_perfil_seq", sequenceName="perfil_id_perfil_seq", allocationSize=1)
 public class Perfil  extends ComunEntidades implements Serializable{
 
 	/**
@@ -19,12 +20,21 @@ public class Perfil  extends ComunEntidades implements Serializable{
 	 */
 	private static final long serialVersionUID = -1131850648956130365L;
 
-	@Id
-    @SequenceGenerator(name="perfil_id_perfil_seq", sequenceName="perfil_id_perfil_seq", allocationSize=1)
+	@Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="perfil_id_perfil_seq")
     @Column(name = "id_perfil", updatable=false)
 	private int idPerfil;
+	
+	private String nome;
 
+	private String descricao;
+
+	
+	
+	public Perfil() {
+	}
+	
+	
 	public int getIdPerfil() {
 		return idPerfil;
 	}
@@ -49,8 +59,6 @@ public class Perfil  extends ComunEntidades implements Serializable{
 		this.descricao = descricao;
 	}
 
-	private String nome;
-
-	private String descricao;
+	
 
 }
