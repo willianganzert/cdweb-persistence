@@ -12,6 +12,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="acao_predefinicao")
+@SequenceGenerator(name="acao_predefinicao_id_acao_predefinicao_seq",
+sequenceName="acao_predefinicao_id_acao_predefinicao_seq",
+allocationSize=1)
 public class AcaoPredefinicao extends ComunEntidades implements Serializable{
 
 	/**
@@ -20,14 +23,14 @@ public class AcaoPredefinicao extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 
-	@Id
-    @SequenceGenerator(name="acao_predefinicao_id_acao_predefinicao_seq",
-                       sequenceName="acao_predefinicao_id_acao_predefinicao_seq",
-                       allocationSize=1)
+	@Id    
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
                     generator="acao_predefinicao_id_acao_predefinicao_seq")
     @Column(name = "id_acao_predeficao", updatable=false)
 	private int idAcaoPredeficao;
+	
+	public AcaoPredefinicao() {
+	}
 	
 	public int getIdAcaoPredeficao() {
 		return idAcaoPredeficao;

@@ -8,11 +8,20 @@ import javax.persistence.*;
  *
  */
 @Entity
-
+@Table(name="configuracoes")
 public class Configuracoes extends ComunEntidades implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	private String chave;
+	private String valor;
+	
+	
+	public Configuracoes() {
+		super();
+	}
+	
 	public String getChave() {
 		return chave;
 	}
@@ -29,12 +38,6 @@ public class Configuracoes extends ComunEntidades implements Serializable{
 		this.valor = valor;
 	}
 
-	private String valor;
 	
-	private static final long serialVersionUID = 1L;
-
-	public Configuracoes() {
-		super();
-	}
    
 }

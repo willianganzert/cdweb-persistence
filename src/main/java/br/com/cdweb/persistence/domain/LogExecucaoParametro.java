@@ -8,6 +8,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -15,6 +16,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 @Table(name="log_execucao_parametro")
+@SequenceGenerator(name="log_execucao_parametro_id_log_execucao_parametro_seq",
+sequenceName="log_execucao_parametro_id_log_execucao_parametro_seq", allocationSize=1)
 public class LogExecucaoParametro  extends ComunEntidades implements Serializable{
 
 	/**
@@ -22,24 +25,28 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@Id
-    @SequenceGenerator(name="log_execucao_parametro_id_log_execucao_parametro_seq",
-                       sequenceName="log_execucao_parametro_id_log_execucao_parametro_seq",
-                       allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator="log_execucao_parametro_id_log_execucao_parametro_seq")	
-	
+	@Id    
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="log_execucao_parametro_id_log_execucao_parametro_seq")	
     @Column(name = "id_log_execucao_parametro", updatable=false)
 	private int idLogExecucaoParametro;
 
-	private int idParametro;
+	@JoinColumn(name="id_parametro")
+	private Parametro parametro;
 
+	@Column(name="valor_parametro")
 	private String valorParametro;
 
+	@Column(name="descricao_erro")
 	private String descricaoErro;
 
+	@Column(name="hora_criacao")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date horaCriacaoLog;
+	
+	
+	public LogExecucaoParametro() {
+	
+	}
 	
 	
 	public int getIdLogExecucaoParametro() {
@@ -50,12 +57,12 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 		this.idLogExecucaoParametro = idLogExecucaoParametro;
 	}
 
-	public int getIdParametro() {
-		return idParametro;
+	public Parametro getParametro() {
+		return parametro;
 	}
 
-	public void setIdParametro(int idParametro) {
-		this.idParametro = idParametro;
+	public void setParametro(Parametro parametro) {
+		this.parametro = parametro;
 	}
 
 	public String getValorParametro() {

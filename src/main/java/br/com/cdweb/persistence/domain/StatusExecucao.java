@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="status_execucao")
+@SequenceGenerator(name="status_execucao_id_status_execucao_seq", sequenceName="status_execucao_id_status_execucao_seq", allocationSize=1)
 public class StatusExecucao extends ComunEntidades implements Serializable {
 
 	/**
@@ -19,12 +20,12 @@ public class StatusExecucao extends ComunEntidades implements Serializable {
 	 */
 	private static final long serialVersionUID = 9033337457373404955L;
 	
-	@Id
-    @SequenceGenerator(name="status_execucao_id_status_execucao_seq",
-    	sequenceName="status_execucao_id_status_execucao_seq", allocationSize=1)	
+	@Id    	
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="status_execucao_id_status_execucao_seq")	
     @Column(name = "id_status_execucao", updatable=false)
 	private int idStatusExecucao;
+
+	private String nome;
 
 	public int getIdStatusExecucao() {
 		return idStatusExecucao;
@@ -41,7 +42,5 @@ public class StatusExecucao extends ComunEntidades implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	private String nome;
 
 }

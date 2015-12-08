@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="dispositivo")
+@SequenceGenerator(name="dispositivo_id_dispositivo_seq", sequenceName="dispositivo_id_dispositivo_seq", allocationSize=1)
 public class Dispositivo extends ComunEntidades implements Serializable{
 	/**
 	 * 
@@ -19,16 +20,15 @@ public class Dispositivo extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 5313126163246103312L;
 
 	@Id
-    @SequenceGenerator(name="dispositivo_id_dispositivo_seq",
-                       sequenceName="dispositivo_id_dispositivo_seq",
-                       allocationSize=1)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator="dispositivo_id_dispositivo_seq")
-	
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="dispositivo_id_dispositivo_seq")	
     @Column(name = "id_dispositivo", updatable=false)
 	private int idDispositivo;
 
 	private String nome;
+	
+	public Dispositivo() {
+		// TODO Auto-generated constructor stub
+	}
 
 	public int getIdDispositivo() {
 		return idDispositivo;

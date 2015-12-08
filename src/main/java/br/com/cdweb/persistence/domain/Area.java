@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="area")
+@SequenceGenerator(name="area_id_area_seq", sequenceName="area_id_area_seq", allocationSize=1)
 public class Area  extends ComunEntidades implements Serializable {
 
 	/**
@@ -20,12 +21,14 @@ public class Area  extends ComunEntidades implements Serializable {
 	private static final long serialVersionUID = -2383542454530985998L;
 
 	@Id
-    @SequenceGenerator(name="area_id_area_seq", sequenceName="area_id_area_seq", allocationSize=1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="area_id_area_seq")
-    @Column(name = "id_acao_predeficao", updatable=false)
+    @Column(name = "id_area", updatable=false)
 	private int idArea;
 
 	private String nome;
+	
+	public Area() {
+	}
 
 	public int getIdArea() {
 		return idArea;
