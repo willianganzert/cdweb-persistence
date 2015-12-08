@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -25,8 +26,9 @@ public class Parametro  extends ComunEntidades implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="parametro_id_parametro_seq")	
     @Column(name = "id_parametro", updatable=false)
-	private int idParametro;
+	private long idParametro;
 	
+	@ManyToOne
 	@JoinColumn(name="id_dispositivo")
 	private Dispositivo dispositivo;
 	
@@ -51,11 +53,11 @@ public class Parametro  extends ComunEntidades implements Serializable{
 	}	
 	
 
-	public int getIdParametro() {
+	public long getIdParametro() {
 		return idParametro;
 	}
 
-	public void setIdParametro(int idParametro) {
+	public void setIdParametro(long idParametro) {
 		this.idParametro = idParametro;
 	}
 

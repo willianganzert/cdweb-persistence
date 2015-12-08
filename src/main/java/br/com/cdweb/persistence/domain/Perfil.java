@@ -23,7 +23,7 @@ public class Perfil  extends ComunEntidades implements Serializable{
 	@Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="perfil_id_perfil_seq")
     @Column(name = "id_perfil", updatable=false)
-	private int idPerfil;
+	private long idPerfil;
 	
 	private String nome;
 
@@ -35,11 +35,11 @@ public class Perfil  extends ComunEntidades implements Serializable{
 	}
 	
 	
-	public int getIdPerfil() {
+	public long getIdPerfil() {
 		return idPerfil;
 	}
 
-	public void setIdPerfil(int idPerfil) {
+	public void setIdPerfil(long idPerfil) {
 		this.idPerfil = idPerfil;
 	}
 

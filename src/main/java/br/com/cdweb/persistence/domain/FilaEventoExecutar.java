@@ -30,13 +30,13 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY,
     generator="dispositivo_id_dispositivo_seq")
 	@Column(name="fila_evento_executar_id_fila_evento_executar_seq")
-	private int idFilaEventoExecutar;
+	private long idFilaEventoExecutar;
 	
 	@JoinColumn(name="id_modelo_acao")
 	private ModeloAcao modelo_acao;
 	
-	@JoinColumn(name="id_status_execucao")
-	private StatusExecucao status;
+	@Column(length=1, columnDefinition="char(1) default 'P';")
+	private String status;
 	
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
@@ -58,11 +58,11 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	}
 	
 	
-	public int getIdFilaEventoExecutar() {
+	public long getIdFilaEventoExecutar() {
 		return idFilaEventoExecutar;
 	}
 
-	public void setIdFilaEventoExecutar(int idFilaEventoExecutar) {
+	public void setIdFilaEventoExecutar(long idFilaEventoExecutar) {
 		this.idFilaEventoExecutar = idFilaEventoExecutar;
 	}
 
@@ -72,10 +72,10 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	public void setModelo_acao(ModeloAcao modelo_acao) {
 		this.modelo_acao = modelo_acao;
 	}
-	public StatusExecucao getStatus() {
+	public String getStatus() {
 		return status;
 	}
-	public void setStatus(StatusExecucao status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 	public Usuario getUsuario() {

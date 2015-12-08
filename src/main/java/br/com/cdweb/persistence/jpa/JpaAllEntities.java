@@ -22,7 +22,7 @@ import br.com.cdweb.persistence.vo.ResultFilterVo;
 
 /**
  * 
- * @author willian
+ * @author fausto.koga
  */
 public class JpaAllEntities {
 
@@ -865,7 +865,6 @@ public class JpaAllEntities {
 	 * 
 	 *           JpaAllEntities.delete(p1,j,inc,op); }
 	 * 
-	 * @author fausto
 	 * 
 	 */
     public static abstract class DoAfter{
@@ -972,7 +971,12 @@ public class JpaAllEntities {
 			}
 		}
 	}
-    
+    public static <T extends ComunEntidades> void delete(long idRegistro, Class<T> entidade){
+    	T t =findById(idRegistro, entidade);
+    	if(t != null){
+    		delete(t);
+    	}
+    }
     public static void delete(ComunEntidades... entidades) {
     	EntityManager em=null;
 		em = EntityManagerHelper.getEntityManager();

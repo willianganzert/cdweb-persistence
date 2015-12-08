@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -25,12 +26,13 @@ public class ModeloDispositivo extends ComunEntidades implements Serializable{
 	@Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_dispositivo_id_modelo_dispositivo_seq")	
     @Column(name = "id_modelo_dispositivo", updatable=false)
-	private int idModeloDispositivo;
+	private long idModeloDispositivo;
 
-
+	@ManyToOne
 	@JoinColumn(name="id_dispositivo")
 	private Dispositivo dispositivo;
 	
+	@ManyToOne
 	@JoinColumn(name="id_area")
 	private Area area;
 	
@@ -42,11 +44,11 @@ public class ModeloDispositivo extends ComunEntidades implements Serializable{
 	}
 	
 	
-	public int getIdModeloDispositivo() {
+	public long getIdModeloDispositivo() {
 		return idModeloDispositivo;
 	}
 
-	public void setIdModeloDispositivo(int idModeloDispositivo) {
+	public void setIdModeloDispositivo(long idModeloDispositivo) {
 		this.idModeloDispositivo = idModeloDispositivo;
 	}
 

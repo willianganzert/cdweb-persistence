@@ -28,8 +28,11 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 	@Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="log_execucao_parametro_id_log_execucao_parametro_seq")	
     @Column(name = "id_log_execucao_parametro", updatable=false)
-	private int idLogExecucaoParametro;
+	private long idLogExecucaoParametro;
 
+	@JoinColumn(name="id_fila_evento")
+	private FilaEventoExecutar filaEventoExecutar;
+	
 	@JoinColumn(name="id_parametro")
 	private Parametro parametro;
 
@@ -49,11 +52,11 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 	}
 	
 	
-	public int getIdLogExecucaoParametro() {
+	public long getIdLogExecucaoParametro() {
 		return idLogExecucaoParametro;
 	}
 
-	public void setIdLogExecucaoParametro(int idLogExecucaoParametro) {
+	public void setIdLogExecucaoParametro(long idLogExecucaoParametro) {
 		this.idLogExecucaoParametro = idLogExecucaoParametro;
 	}
 
@@ -89,6 +92,14 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 		this.horaCriacaoLog = horaCriacaoLog;
 	}
 
-	
+
+	public FilaEventoExecutar getFilaEventoExecutar() {
+		return filaEventoExecutar;
+	}
+
+
+	public void setFilaEventoExecutar(FilaEventoExecutar filaEventoExecutar) {
+		this.filaEventoExecutar = filaEventoExecutar;
+	}	
 
 }

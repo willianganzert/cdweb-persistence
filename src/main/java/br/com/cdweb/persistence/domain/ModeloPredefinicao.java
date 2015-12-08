@@ -23,7 +23,7 @@ public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 	@Id	
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_predefinicao_id_modelo_predefinicao_seq")	
     @Column(name = "id_modelo_parametro", updatable=false)
-	private String idModeloPredefinicao;
+	private long idModeloPredefinicao;
 
 	private String nome;
 
@@ -34,11 +34,11 @@ public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 	}
 	
 
-	public String getIdModeloPredefinicao() {
+	public long getIdModeloPredefinicao() {
 		return idModeloPredefinicao;
 	}
 
-	public void setIdModeloPredefinicao(String idModeloPredefinicao) {
+	public void setIdModeloPredefinicao(long idModeloPredefinicao) {
 		this.idModeloPredefinicao = idModeloPredefinicao;
 	}
 

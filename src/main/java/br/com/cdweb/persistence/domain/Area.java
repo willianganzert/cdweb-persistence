@@ -23,18 +23,18 @@ public class Area  extends ComunEntidades implements Serializable {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="area_id_area_seq")
     @Column(name = "id_area", updatable=false)
-	private int idArea;
+	private long idArea;
 
 	private String nome;
 	
 	public Area() {
 	}
 
-	public int getIdArea() {
+	public long getIdArea() {
 		return idArea;
 	}
 
-	public void setIdArea(int idArea) {
+	public void setIdArea(long idArea) {
 		this.idArea = idArea;
 	}
 

@@ -27,7 +27,7 @@ public class PerfilAcesso  extends ComunEntidades implements Serializable{
 	@Id	
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="perfil_acesso_id_perfil_acesso_seq")	
     @Column(name = "id_perfil_acesso", updatable=false)
-	private int idPerfilAcesso;
+	private long idPerfilAcesso;
 	
 	@JoinColumn(name="id_perfil")
 	private Perfil perfil;
@@ -49,11 +49,11 @@ public class PerfilAcesso  extends ComunEntidades implements Serializable{
 	}
 	
 	
-	public int getIdPerfilAcesso() {
+	public long getIdPerfilAcesso() {
 		return idPerfilAcesso;
 	}
 
-	public void setIdPerfilAcesso(int idPerfilAcesso) {
+	public void setIdPerfilAcesso(long idPerfilAcesso) {
 		this.idPerfilAcesso = idPerfilAcesso;
 	}
 	

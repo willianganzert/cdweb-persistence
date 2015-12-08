@@ -22,7 +22,7 @@ public class Dispositivo extends ComunEntidades implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY,generator="dispositivo_id_dispositivo_seq")	
     @Column(name = "id_dispositivo", updatable=false)
-	private int idDispositivo;
+	private long idDispositivo;
 
 	private String nome;
 	
@@ -30,11 +30,11 @@ public class Dispositivo extends ComunEntidades implements Serializable{
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getIdDispositivo() {
+	public long getIdDispositivo() {
 		return idDispositivo;
 	}
 
-	public void setIdDispositivo(int idDispositivo) {
+	public void setIdDispositivo(long idDispositivo) {
 		this.idDispositivo = idDispositivo;
 	}
 

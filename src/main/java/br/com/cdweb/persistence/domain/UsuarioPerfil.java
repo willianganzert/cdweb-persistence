@@ -27,7 +27,7 @@ public class UsuarioPerfil  extends ComunEntidades implements Serializable{
 	@Id    	
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="usuario_perfil_id_usuario_perfil_seq")	
     @Column(name = "id_usuario_perfil", updatable=false)
-	private int idUsuarioPerfil;
+	private long idUsuarioPerfil;
 
 	@ManyToOne
 	@JoinColumn(name="id_usuario")
@@ -40,11 +40,11 @@ public class UsuarioPerfil  extends ComunEntidades implements Serializable{
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date dataAtribuicao;
 
-	public int getIdUsuarioPerfil() {
+	public long getIdUsuarioPerfil() {
 		return idUsuarioPerfil;
 	}
 
-	public void setIdUsuarioPerfil(int idUsuarioPerfil) {
+	public void setIdUsuarioPerfil(long idUsuarioPerfil) {
 		this.idUsuarioPerfil = idUsuarioPerfil;
 	}
 

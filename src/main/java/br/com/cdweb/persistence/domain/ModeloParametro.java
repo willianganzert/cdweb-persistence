@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,11 +25,13 @@ public class ModeloParametro extends ComunEntidades implements Serializable{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_parametro_id_modelo_parametro_seq")	
     @Column(name = "id_modelo_parametro", updatable=false)
-	private int idModeloParametro;
+	private long idModeloParametro;
 
+	@ManyToOne()
 	@JoinColumn(name="id_parametro")
 	private Parametro parametro;
 	
+	@ManyToOne
 	@JoinColumn(name="id_modelo_acao")
 	private ModeloAcao modeloAcao;
 	
@@ -39,11 +42,11 @@ public class ModeloParametro extends ComunEntidades implements Serializable{
 	}
 	
 
-	public int getIdModeloParametro() {
+	public long getIdModeloParametro() {
 		return idModeloParametro;
 	}
 
-	public void setIdModeloParametro(int idModeloParametro) {
+	public void setIdModeloParametro(long idModeloParametro) {
 		this.idModeloParametro = idModeloParametro;
 	}
 

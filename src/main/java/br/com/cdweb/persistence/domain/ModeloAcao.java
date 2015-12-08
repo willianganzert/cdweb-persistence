@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -24,8 +25,9 @@ public class ModeloAcao extends ComunEntidades implements Serializable {
 	@Id    
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_acao_id_modelo_acao_seq")
     @Column(name = "id_modelo_acao", updatable=false)
-	private int idModeloAcao;
+	private long idModeloAcao;
 	
+	@ManyToOne
 	@JoinColumn(name="id_modelo_dispositivo")
 	private ModeloDispositivo modeloDispositivo;
 
@@ -38,11 +40,11 @@ public class ModeloAcao extends ComunEntidades implements Serializable {
 	
 	}
 	
-	public int getIdModeloAcao() {
+	public long getIdModeloAcao() {
 		return idModeloAcao;
 	}
 
-	public void setIdModeloAcao(int idModeloAcao) {
+	public void setIdModeloAcao(long idModeloAcao) {
 		this.idModeloAcao = idModeloAcao;
 	}
 

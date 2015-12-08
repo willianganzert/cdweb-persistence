@@ -28,9 +28,7 @@
 			<property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/nerdtic1_cdweb"/>
 			<property name="javax.persistence.jdbc.user" value="nerdtic1_willian"/>
 			<property name="javax.persistence.jdbc.password" value="6]fHW{$P6!.R"/>
-			<property name="eclipselink.logging.exceptions" value="true"/>
-			
-			
+			<property name="eclipselink.logging.exceptions" value="true"/>			
 		</properties>
 	</persistence-unit>
 </persistence>
