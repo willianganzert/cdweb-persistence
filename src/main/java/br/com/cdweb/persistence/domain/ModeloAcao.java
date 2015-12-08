@@ -22,7 +22,7 @@ public class ModeloAcao extends ComunEntidades implements Serializable {
 	private static final long serialVersionUID = 6504996157538844876L;
 	
 	@Id    
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_acao_id_modelo_acao_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_acao_id_modelo_acao_seq")
     @Column(name = "id_modelo_acao", updatable=false)
 	private int idModeloAcao;
 	

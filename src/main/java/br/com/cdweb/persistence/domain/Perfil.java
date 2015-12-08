@@ -21,7 +21,7 @@ public class Perfil  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = -1131850648956130365L;
 
 	@Id    
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="perfil_id_perfil_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="perfil_id_perfil_seq")
     @Column(name = "id_perfil", updatable=false)
 	private int idPerfil;
 	

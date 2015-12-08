@@ -21,7 +21,7 @@ public class Area  extends ComunEntidades implements Serializable {
 	private static final long serialVersionUID = -2383542454530985998L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="area_id_area_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="area_id_area_seq")
     @Column(name = "id_area", updatable=false)
 	private int idArea;
 

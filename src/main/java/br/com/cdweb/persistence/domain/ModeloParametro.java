@@ -22,7 +22,7 @@ public class ModeloParametro extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = -5360076284629466609L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_parametro_id_modelo_parametro_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_parametro_id_modelo_parametro_seq")	
     @Column(name = "id_modelo_parametro", updatable=false)
 	private int idModeloParametro;
 

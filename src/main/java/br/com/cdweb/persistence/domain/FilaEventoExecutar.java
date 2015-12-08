@@ -27,7 +27,7 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE,
+	@GeneratedValue(strategy = GenerationType.IDENTITY,
     generator="dispositivo_id_dispositivo_seq")
 	@Column(name="fila_evento_executar_id_fila_evento_executar_seq")
 	private int idFilaEventoExecutar;

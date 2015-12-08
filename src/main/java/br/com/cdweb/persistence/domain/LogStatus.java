@@ -21,7 +21,7 @@ public class LogStatus extends ComunEntidades implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id    
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="log_status_id_log_status_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="log_status_id_log_status_seq")	
     @Column(name = "id_log_status", updatable=false)
 	private int idLogStatus;
 	

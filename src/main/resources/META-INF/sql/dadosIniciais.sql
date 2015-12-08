@@ -1,0 +1,1 @@
+INSERT INTO usuario (id_usuario, LOGIN, NOME, SENHA, TELEFONE) VALUES (nextval('usuario_id_usuario_seq'), 'admin', 'Administrador', 'admin', '4199653639');

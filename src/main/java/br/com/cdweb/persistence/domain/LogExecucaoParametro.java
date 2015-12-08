@@ -26,7 +26,7 @@ public class LogExecucaoParametro  extends ComunEntidades implements Serializabl
 	private static final long serialVersionUID = 1L;
 
 	@Id    
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="log_execucao_parametro_id_log_execucao_parametro_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="log_execucao_parametro_id_log_execucao_parametro_seq")	
     @Column(name = "id_log_execucao_parametro", updatable=false)
 	private int idLogExecucaoParametro;
 

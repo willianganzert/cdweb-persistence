@@ -25,7 +25,7 @@ public class PerfilAcesso  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 544226908245284451L;
 	
 	@Id	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="perfil_acesso_id_perfil_acesso_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="perfil_acesso_id_perfil_acesso_seq")	
     @Column(name = "id_perfil_acesso", updatable=false)
 	private int idPerfilAcesso;
 	

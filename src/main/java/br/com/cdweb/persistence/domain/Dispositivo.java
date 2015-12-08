@@ -20,7 +20,7 @@ public class Dispositivo extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 5313126163246103312L;
 
 	@Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="dispositivo_id_dispositivo_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY,generator="dispositivo_id_dispositivo_seq")	
     @Column(name = "id_dispositivo", updatable=false)
 	private int idDispositivo;
 

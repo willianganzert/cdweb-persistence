@@ -21,7 +21,7 @@ public class StatusExecucao extends ComunEntidades implements Serializable {
 	private static final long serialVersionUID = 9033337457373404955L;
 	
 	@Id    	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="status_execucao_id_status_execucao_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="status_execucao_id_status_execucao_seq")	
     @Column(name = "id_status_execucao", updatable=false)
 	private int idStatusExecucao;
 

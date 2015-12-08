@@ -24,8 +24,7 @@ public class AcaoPredefinicao extends ComunEntidades implements Serializable{
 
 
 	@Id    
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator="acao_predefinicao_id_acao_predefinicao_seq")
+    @GeneratedValue(generator="acao_predefinicao_id_acao_predefinicao_seq")
     @Column(name = "id_acao_predeficao", updatable=false)
 	private int idAcaoPredeficao;
 	

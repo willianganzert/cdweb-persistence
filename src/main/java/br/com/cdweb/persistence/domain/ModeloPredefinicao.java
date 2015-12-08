@@ -21,7 +21,7 @@ public class ModeloPredefinicao  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = -7084921622387297614L;
 
 	@Id	
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="modelo_predefinicao_id_modelo_predefinicao_seq")	
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator="modelo_predefinicao_id_modelo_predefinicao_seq")	
     @Column(name = "id_modelo_parametro", updatable=false)
 	private String idModeloPredefinicao;
 
