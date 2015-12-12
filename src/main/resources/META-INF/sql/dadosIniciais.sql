@@ -9,7 +9,7 @@ INSERT INTO modelo_dispositivo VALUES (1, 'Lampada Sala', NULL, 1);
 ALTER SEQUENCE modelo_dispositivo_id_modelo_dispositivo_seq RESTART WITH 2;
 
 INSERT INTO modelo_acao VALUES (1, 'Acender a luz', 'Ligar', 1);
-INSERT INTO modelo_acao VALUES (2, 'Acender a luz', 'Desligar', 1);
+INSERT INTO modelo_acao VALUES (2, 'Apagar a luz', 'Desligar', 1);
 ALTER SEQUENCE modelo_acao_id_modelo_acao_seq RESTART WITH 3;
 
 INSERT INTO parametro VALUES (1, 'Ligado', 2, '1', '0', 1);
