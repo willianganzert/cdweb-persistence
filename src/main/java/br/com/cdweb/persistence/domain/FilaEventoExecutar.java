@@ -5,6 +5,8 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +15,8 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import br.com.cdweb.mensagens.StatusMensagem;
 
 @Entity
 @Table(name="fila_evento_executar")
@@ -27,23 +31,23 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY,
-    generator="dispositivo_id_dispositivo_seq")
-	@Column(name="fila_evento_executar_id_fila_evento_executar_seq")
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="dispositivo_id_dispositivo_seq")
+	@Column(name="id_fila_evento_executar")
 	private long idFilaEventoExecutar;
 	
 	@JoinColumn(name="id_modelo_acao")
 	private ModeloAcao modelo_acao;
 	
-	@Column(length=1, columnDefinition="char(1) default 'P';")
-	private String status;
+	@Column(length=1, columnDefinition="char(1)")
+	@Enumerated(EnumType.STRING)
+	private StatusMensagem status;
 	
 	@JoinColumn(name="id_usuario")
 	private Usuario usuario;
 
-	@Column(name="hora_insercao_fila")
+	@Column(name="hora_insercao_fila", updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date horaInsercaoFila;
+	private Date horaInsercaoFila = new Date();
 
 	@Column(name="hora_execucao_evento")
 	@Temporal(TemporalType.TIMESTAMP)
@@ -72,12 +76,17 @@ public class FilaEventoExecutar  extends ComunEntidades implements Serializable{
 	public void setModelo_acao(ModeloAcao modelo_acao) {
 		this.modelo_acao = modelo_acao;
 	}
-	public String getStatus() {
+	
+	public StatusMensagem getStatus() {
 		return status;
 	}
-	public void setStatus(String status) {
+
+
+	public void setStatus(StatusMensagem status) {
 		this.status = status;
 	}
+
+
 	public Usuario getUsuario() {
 		return usuario;
 	}
